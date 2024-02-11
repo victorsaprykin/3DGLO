@@ -1,5 +1,5 @@
 const oneModule = () => {
-  const one = "Я - модуль One!!";
+  const one = 'Я - модуль One!!';
 
   console.log(one);
 };

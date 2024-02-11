@@ -1,5 +1,5 @@
 const twoModule = () => {
-  const two = "Я - модуль Two!!!";
+  const two = 'Я - модуль Two!!!';
 
   console.log(two);
 };
