@@ -18,7 +18,7 @@ const timer = (deadLine) => {
 
     return { timeRemaining, hours, minutes, seconds };
   };
-
+  let interval = 0;
   const updateClock = () => {
     let getTime = getTimeRemaining();
 
@@ -26,15 +26,16 @@ const timer = (deadLine) => {
     timerMinutes.textContent = ('0' + getTime.minutes).slice(-2);
     timerSeconds.textContent = ('0' + getTime.seconds).slice(-2);
 
-    if (getTime.timeRemaining > 0) {
-      setInterval(updateClock, 1000);
-    } else {
+    if (getTime.timeRemaining < 0) {
+      clearInterval(interval);
+
       timerHours.textContent = '00';
       timerMinutes.textContent = '00';
       timerSeconds.textContent = '00';
     }
   };
-  updateClock();
+
+  interval = setInterval(updateClock, 1000);
 };
 
 export default timer;
