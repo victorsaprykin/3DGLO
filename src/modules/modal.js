@@ -4,30 +4,40 @@ const modal = () => {
   const closeBtn = modal.querySelector('.popup-close');
   const modalContent = modal.querySelector('.popup-content');
 
-  if (screen.width > 768) {
-    modal.style.display = 'block';
-    modal.style.zIndex = '-1';
-    modal.style.opacity = '0';
-  }
+  const popupData = {
+    count: -445,
+    speed: 6,
+    startPos: -445,
+    endPos: 0,
+  };
+
+  const showPopup = () => {
+    popupData.startPos > popupData.endPos
+      ? (popupData.count -= popupData.speed)
+      : (popupData.count += popupData.speed);
+    modalContent.style.transform = `translateX(${popupData.count}px)`;
+
+    if (
+      popupData.startPos > popupData.endPos
+        ? popupData.count > popupData.endPos
+        : popupData.count < popupData.endPos
+    ) {
+      requestAnimationFrame(showPopup);
+    }
+  };
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
+      modal.style.display = 'block';
       if (screen.width > 768) {
-        modal.style.transition = 'opacity 2s';
-        modal.style.opacity = '1';
-        modal.style.zIndex = '9';
-      } else {
-        modal.style.display = 'block';
+        popupData.count = popupData.startPos;
+        requestAnimationFrame(showPopup);
       }
     });
   });
 
   closeBtn.addEventListener('click', () => {
-    if (screen.width > 768) {
-      modal.style.opacity = '0';
-    } else {
-      modal.style.display = 'none';
-    }
+    modal.style.display = 'none';
   });
 };
 
