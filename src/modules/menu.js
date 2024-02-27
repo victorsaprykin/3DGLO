@@ -10,10 +10,14 @@ const menu = () => {
 
   menuBtn.addEventListener('click', handleMenu);
 
-  closeBtn.addEventListener('click', handleMenu);
-
-  menuItems.forEach((menuItem) =>
-    menuItem.addEventListener('click', handleMenu)
-  );
+  menu.addEventListener('click', (e) => {
+    console.log(e.target.closest('menu'));
+    if (e.target.closest('menu') && !e.target.classList.contains('active-menu')) {
+      handleMenu();
+    } else {
+      return;
+    }
+  });
 };
 export default menu;
+
