@@ -9,10 +9,15 @@ const menu = () => {
   menuBtn.addEventListener('click', handleMenu);
 
   menu.addEventListener('click', (e) => {
+    console.dir(e.target);
+
     if (
-      e.target.closest('menu') &&
-      !e.target.classList.contains('active-menu')
+      e.target.closest('.menu') ||
+      (!e.target.closest('menu') &&
+        document.querySelector('menu').classList.contains('active-menu'))
     ) {
+      handleMenu();
+    } else if (e.target.closest('menu') && e.target.closest('[href^="#"]')) {
       handleMenu();
     } else {
       return;
