@@ -1,25 +1,50 @@
-const calc = () => {
+const calc = (price = 100) => {
+  console.log(price);
   const calcBlock = document.querySelector('.calc-block');
+  const calcType = document.querySelector('.calc-type');
+  const calcSquare = document.querySelector('.calc-square');
+  const calcCount = document.querySelector('.calc-count');
+  const calcDay = document.querySelector('.calc-day');
+  const total = document.querySelector('#total');
 
-  const inputs = calcBlock.querySelectorAll('.calc-item');
+  const countCalc = () => {
+    const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
+    const calcSquareValue = calcSquare.value;
 
-  inputs.forEach((input) => {
-    input.addEventListener('change', () => {
-      let isError = false;
+    let totalValue = 0;
+    let calcCountValue = 1;
+    let calcDayValue = 1;
 
-      if (!/[^\d]/g.test(input.value) && input.value !== '') {
-        alert('Только Цифры'); 
-      } else {
-        isError = true
-      }
+    if (calcCount.value > 1) {
+      calcCountValue += calcCount.value / 10;
+    }
 
-      if (!isError) {
-        console.log('Calk');
-      }
-    });
+    if (calcDay.value && calcDay.value < 5) {
+      calcDayValue = 2;
+    } else if (calcDay.value && calcDay < 10) {
+      calcDayValue = 1.5;
+    }
+
+    if (calcType.value && calcSquare.value) {
+      totalValue =
+        price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+    } else {
+      totalValue = 0;
+    }
+    total.textContent = totalValue;
+  };
+  calcBlock.addEventListener('input', (e) => {
+    if (
+      e.target === calcType ||
+      e.target === calcSquare ||
+      e.target === calcCount ||
+      e.target === calcDay
+    ) {
+      countCalc();
+    }
   });
+
+
 };
 
 export default calc;
-
-

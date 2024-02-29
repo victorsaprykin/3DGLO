@@ -4,14 +4,16 @@ import modal from './modules/modal';
 import calc from './modules/calc';
 import form1 from './modules/form1';
 import tabs from './modules/tabs';
+import slider from './modules/slider';
+import sliderCarousel from './modules/sliderCarousel';
 
-timer('28 february 2024');
+timer('19 march 2024');
 menu();
 modal();
-calc()
-form1()
-tabs()
-
-
+calc(100);
+form1();
+tabs();
+slider();
+sliderCarousel()
 
 
