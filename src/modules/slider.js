@@ -8,25 +8,25 @@ const slider = () => {
   let currentSlide = 0;
   let interval;
 
-  const addDots = () => {
-       const slides = document.querySelectorAll('.portfolio-item');
-    slides.forEach(() => {
+  // const addDots = () => {
+  //      const slides = document.querySelectorAll('.portfolio-item');
+  //   slides.forEach(() => {
      
-      const dotList = document.querySelector('.portfolio-dots');
-      const li = document.createElement('li');
+  //     const dotList = document.querySelector('.portfolio-dots');
+  //     const li = document.createElement('li');
       
-      console.log(li);
-     li.classList.add('dot')
+  //     console.log(li);
+  //    li.classList.add('dot')
       
-      dotList.appendChild(li);
+  //     dotList.appendChild(li);
 
-      dotList.children[0].classList.add('dot-active')
-    });
-  };
+  //     dotList.children[0].classList.add('dot-active')
+  //   });
+  // };
 
 
-  addDots();
-  
+  // addDots();
+
 
 
 
