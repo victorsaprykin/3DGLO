@@ -7,6 +7,18 @@ const calc = (price = 100) => {
   const calcDay = document.querySelector('.calc-day');
   const total = document.querySelector('#total');
 
+  calcSquare.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]+$/, '');
+  });
+
+  calcCount.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]+$/, '');
+  });
+
+  calcDay.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]+$/, '');
+  });
+
   const countCalc = () => {
     const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
     const calcSquareValue = calcSquare.value;
@@ -26,8 +38,9 @@ const calc = (price = 100) => {
     }
 
     if (calcType.value && calcSquare.value) {
-      totalValue =
-        price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+      totalValue = Math.round(
+        price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue
+      );
     } else {
       totalValue = 0;
     }
@@ -43,10 +56,6 @@ const calc = (price = 100) => {
       countCalc();
     }
   });
-
-
 };
 
 export default calc;
-
-

@@ -8,21 +8,27 @@ const slider = () => {
   let currentSlide = 0;
   let interval;
 
-  // const addDots = () => {
-  //   slides.forEach((slide) => {
-  //     const li = document.createElement('li');
-  //     li.classList.add('dot');
+  const addDots = () => {
+       const slides = document.querySelectorAll('.portfolio-item');
+    slides.forEach(() => {
+     
+      const dotList = document.querySelector('.portfolio-dots');
+      const li = document.createElement('li');
+      
+      console.log(li);
+     li.classList.add('dot')
+      
+      dotList.appendChild(li);
 
-  //     console.log(li);
-  //     if (slide == 0) {
-  //       li.classList.add('.dot-active');
-  //     }
+      dotList.children[0].classList.add('dot-active')
+    });
+  };
 
-  //     dotList.append(li);
-  //   });
-  // };
 
-  // addDots();
+  addDots();
+  
+
+
 
   const prevSlide = (elems, index, strClass) => {
     elems[index].classList.remove(strClass);
