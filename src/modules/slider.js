@@ -1,34 +1,28 @@
 const slider = () => {
   const sliderBlock = document.querySelector('.portfolio-content');
   const slides = document.querySelectorAll('.portfolio-item');
-  const dots = document.querySelectorAll('.dot');
   const timeInterval = 2000;
   const dotList = document.querySelector('.portfolio-dots');
   console.log(dotList);
+  let dots = '';
   let currentSlide = 0;
   let interval;
 
-  // const addDots = () => {
-  //      const slides = document.querySelectorAll('.portfolio-item');
-  //   slides.forEach(() => {
-     
-  //     const dotList = document.querySelector('.portfolio-dots');
-  //     const li = document.createElement('li');
-      
-  //     console.log(li);
-  //    li.classList.add('dot')
-      
-  //     dotList.appendChild(li);
+  const addDots = () => {
+    let li = '';
+    slides.forEach((elem, ind) => {
+      li = document.createElement('li');
+      if (ind === 0) {
+        li.className = 'dot dot-active';
+      } else {
+        li.className = 'dot';
+      }
 
-  //     dotList.children[0].classList.add('dot-active')
-  //   });
-  // };
+      dotList.append(li);
 
-
-  // addDots();
-
-
-
+      dots = document.querySelectorAll('.dot');
+    });
+  };
 
   const prevSlide = (elems, index, strClass) => {
     elems[index].classList.remove(strClass);
@@ -113,6 +107,7 @@ const slider = () => {
     true
   );
 
+  addDots();
   startSlide();
 };
 export default slider;

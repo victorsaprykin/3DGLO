@@ -1,6 +1,6 @@
-// const form1 = () => {
-//   const form = document.querySelector('#form1');
-//   const nameInput = form.querySelector('.form-name');
+// const form2 = () => {
+//   const form = document.querySelector('#form2');
+//   const nameInput = form.querySelector('.top-form');
 //   const emailInput = form.querySelector('.form-email');
 //   const telInput = form.querySelector('.form-phone');
 //   const formBtn = form.querySelector('.form-btn');
@@ -11,7 +11,7 @@
 //   console.log(telInput);
 //   console.log(formBtn);
 
-//   form.addEventListener('submit', (e) => {
+//   formBtn.addEventListener('submit', (e) => {
 //     e.preventDefault();
 
 //     let isError = false;
@@ -38,5 +38,5 @@
 // };
 
 
-// export default form1;
+// export default form2;
 

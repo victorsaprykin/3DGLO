@@ -1,5 +1,5 @@
-// const form1 = () => {
-//   const form = document.querySelector('#form1');
+// const form3 = () => {
+//   const form = document.querySelector('#form3');
 //   const nameInput = form.querySelector('.form-name');
 //   const emailInput = form.querySelector('.form-email');
 //   const telInput = form.querySelector('.form-phone');
@@ -11,7 +11,7 @@
 //   console.log(telInput);
 //   console.log(formBtn);
 
-//   form.addEventListener('submit', (e) => {
+//   formBtn.addEventListener('submit', (e) => {
 //     e.preventDefault();
 
 //     let isError = false;
@@ -33,10 +33,11 @@
 
 //     if (!isError) {
 //       alert('Данные отправлены');
+      
 //     }
 //   });
 // };
 
 
-// export default form1;
+// export default form3;
 
