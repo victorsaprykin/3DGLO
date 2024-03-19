@@ -8,7 +8,7 @@ import slider from './modules/slider';
 import sliderCarousel from './modules/sliderCarousel';
 import sendForm from './modules/sendForm';
 
-timer('19 march 2024');
+timer('29 march 2024');
 menu();
 modal();
 calc(100);

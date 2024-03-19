@@ -9,8 +9,6 @@ const menu = () => {
   menuBtn.addEventListener('click', handleMenu);
 
   menu.addEventListener('click', (e) => {
-    console.dir(e.target);
-
     if (
       e.target.closest('.menu') ||
       (!e.target.closest('menu') &&

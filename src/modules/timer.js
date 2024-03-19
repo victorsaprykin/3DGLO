@@ -1,7 +1,4 @@
 const timer = (deadLine) => {
-  // const one = 'Я - модуль One!!!!';
-  console.log(deadLine);
-  // console.log(one);
   const timerHours = document.querySelector('#timer-hours');
   const timerMinutes = document.querySelector('#timer-minutes');
   const timerSeconds = document.querySelector('#timer-seconds');

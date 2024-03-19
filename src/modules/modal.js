@@ -9,7 +9,6 @@ const modal = () => {
     btn.addEventListener('click', () => {
       modal.style.display = 'block';
       if (screen.width > 768) {
-        console.log('Click');
         animate({
           duration: 1000,
           timing(timeFraction) {

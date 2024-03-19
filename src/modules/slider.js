@@ -3,7 +3,7 @@ const slider = () => {
   const slides = document.querySelectorAll('.portfolio-item');
   const timeInterval = 2000;
   const dotList = document.querySelector('.portfolio-dots');
-  console.log(dotList);
+  
   let dots = '';
   let currentSlide = 0;
   let interval;

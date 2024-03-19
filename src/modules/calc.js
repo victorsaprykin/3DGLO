@@ -1,5 +1,4 @@
 const calc = (price = 100) => {
-  console.log(price);
   const calcBlock = document.querySelector('.calc-block');
   const calcType = document.querySelector('.calc-type');
   const calcSquare = document.querySelector('.calc-square');

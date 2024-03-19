@@ -5,7 +5,7 @@ const sendForm = ({ formId_1, formId_2, formId_3, someElem = [] }) => {
   const statusBlock = document.createElement('div');
   const loadText = 'Load...';
   const errorText = 'Error';
-  const successText = 'Спасибо! наш менеджер с вами свяжется';
+  const successText = 'Спасибо! Наш менеджер с Вами свяжется!';
 
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
@@ -54,6 +54,10 @@ const sendForm = ({ formId_1, formId_2, formId_3, someElem = [] }) => {
       sendData(formBody)
         .then((data) => {
           statusBlock.textContent = successText;
+          if (form_3) {
+            statusBlock.style.color = '#fff';
+          }
+
           spinner.remove();
           formElements.forEach((input) => {
             input.value = '';
@@ -94,9 +98,7 @@ const sendForm = ({ formId_1, formId_2, formId_3, someElem = [] }) => {
 
       submitForm(form_3);
     });
-  } catch (error) {
-    console.log(error.message);
-  }
+  } catch (error) {}
 };
 
 export default sendForm;
